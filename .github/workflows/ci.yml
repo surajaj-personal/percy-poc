@@ -3,15 +3,14 @@ on:
     branches:
       - main
 jobs:
-  name: CI
-  build:
+  ci: # Use a valid job name (e.g., ci)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: "14"
       - run: npm install --save-dev @percy/cli
       - run: npx percy snapshot ./
         env:
-          PERCY_TOKEN: $
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }} # Ensure the PERCY_TOKEN is set correctly in GitHub Secrets
