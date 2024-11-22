@@ -16,13 +16,13 @@ jobs:
       # Step 2: Set up Node.js
       - uses: actions/setup-node@v3
         with:
-          node-version: "16" # Update Node.js to version 16 or later
+          node-version: "18" # Update Node.js to version 16 or later
 
       # Step 3: Install dependencies
-      - run: npm install
+      - run: yarn install
 
       # Step 4: Install Percy CLI
-      - run: npm install --save-dev @percy/cli
+      - run: yarn install --save-dev @percy/cli
 
       # Step 5: Run Percy snapshots
       - run: npx percy snapshot ./ # Update with your snapshot directory
