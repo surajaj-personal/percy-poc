@@ -23,7 +23,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "percy-snapshot": "storybook dev -p 6006 & wait-on http://localhost:6006 && percy snapshot http://localhost:6006 && kill $!",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +48,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
+    "@percy/cli": "^1.30.2",
     "@storybook/addon-essentials": "^8.4.5",
     "@storybook/addon-interactions": "^8.4.5",
     "@storybook/addon-onboarding": "^8.4.5",
@@ -55,9 +58,10 @@
     "@storybook/react-webpack5": "^8.4.5",
     "@storybook/test": "^8.4.5",
     "eslint-plugin-storybook": "^0.11.1",
+    "husky": "^9.1.7",
     "prop-types": "^15.8.1",
     "storybook": "^8.4.5",
-    "webpack": "^5.96.1",
-    "@percy/cli": "^1.30.2"
+    "wait-on": "^8.0.1",
+    "webpack": "^5.96.1"
   }
 }
