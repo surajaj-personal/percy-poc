@@ -16,7 +16,7 @@ jobs:
       # Step 2: Set up Node.js
       - uses: actions/setup-node@v3
         with:
-          node-version: "14" # Adjust based on your project's requirements
+          node-version: "16" # Update Node.js to version 16 or later
 
       # Step 3: Install dependencies
       - run: npm install
