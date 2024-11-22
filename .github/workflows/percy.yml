@@ -22,7 +22,7 @@ jobs:
       - run: yarn install
 
       # Step 4: Install Percy CLI
-      - run: yarn install --save-dev @percy/cli
+      - run: yarn add --save-dev @percy/cli
 
       # Step 5: Run Percy snapshots
       - run: npx percy snapshot ./ # Update with your snapshot directory
