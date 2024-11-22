@@ -5,7 +5,7 @@ import App from './App';
 const meta: Meta<typeof App> = {
   component: App,
   parameters: {
-    percy: { skip: false }, // Ensures Percy takes snapshots for this story
+    percy: { name: 'App Snapshot', skip: false }, // Ensures Percy takes snapshots for this story
   },
 };
 

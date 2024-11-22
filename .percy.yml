@@ -1,0 +1,25 @@
+version: 2
+percy:
+  useSystemProxy: false
+snapshot:
+  widths:
+    - 375
+    - 1280
+  minHeight: 1024
+  percyCSS: ""
+  enableJavaScript: false
+  cliEnableJavaScript: true
+  disableShadowDOM: false
+  responsiveSnapshotCapture: false
+discovery:
+    allowed-hostnames:
+      - localhost
+  static_dir: ./storybook-static
+  disallowedHostnames: []
+  networkIdleTimeout: 100
+  captureMockedServiceWorker: false
+  retry: false
+upload:
+  files: "**/*.{png,jpg,jpeg}"
+  ignore: ""
+  stripExtensions: false
