@@ -8,15 +8,15 @@ const App: React.FC = () => {
         <h1>Test Page for Percy</h1>
       </header>
       <main style={{ padding: '20px', textAlign: 'center' }}>
-        <h2>Welcome to the Percy Integration Test Hello World</h2>
+        <h2>Welcome to the Percy Integration Test</h2>
         <p>
           This page is designed to test visual changes using Percy. Make some modifications and see how Percy detects them.
         </p>
         <button
           style={{
-            backgroundColor: 'orange',
-            color: 'white',
-            padding: '10px 20px',
+            backgroundColor: 'purple',
+            color: 'orange',
+            padding: '15px 25px',
             border: 'none',
             borderRadius: '5px',
             cursor: 'pointer',
