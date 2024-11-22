@@ -14,7 +14,7 @@ const App: React.FC = () => {
         </p>
         <button
           style={{
-            backgroundColor: 'green',
+            backgroundColor: 'orange',
             color: 'white',
             padding: '10px 20px',
             border: 'none',
