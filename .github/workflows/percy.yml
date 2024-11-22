@@ -21,10 +21,7 @@ jobs:
       # Step 3: Install dependencies
       - run: yarn install
 
-      # Step 4: Install Percy CLI
-      - run: yarn add --save-dev @percy/cli
-
-      # Step 5: Run Percy snapshots
+      # Step 4: Run Percy snapshots
       - run: npx percy snapshot ./ # Update with your snapshot directory
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }} # Use the secret for secure token access
