@@ -1,27 +1,37 @@
-name: Percy CI
+name: Percy Visual Tests
 
 on:
   pull_request:
     branches:
-      - master # Run workflow on pull requests targeting the master branch
+      - master
 
 jobs:
-  visual-tests:
+  percy-visual-tests:
     runs-on: ubuntu-latest
 
     steps:
       # Step 1: Check out the repository
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       # Step 2: Set up Node.js
-      - uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: "18" # Update Node.js to version 16 or later
+          node-version: 16
 
       # Step 3: Install dependencies
-      - run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-      # Step 4: Run Percy snapshots
-      - run: npx percy snapshot ./ # Update with your snapshot directory
+      # Step 4: Run the development server (for Component Testing)
+      - name: Start development server
+        run: yarn start &
         env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }} # Use the secret for secure token access
+          PORT: 3000
+
+      # Step 5: Run Percy with Cypress Component Testing
+      - name: Run Percy and Cypress
+        run: npx percy exec -- cypress run --component
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
