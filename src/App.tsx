@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Article from './Article';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         >
           Click Me
         </button>
+        <Article />
       </main>
       <footer style={{ backgroundColor: '#f1f1f1', padding: '10px', textAlign: 'center', marginTop: '20px' }}>
         <small>&copy; 2024 Test Company</small>
