@@ -1,5 +1,5 @@
 import React from 'react';
-import App from '../../src/App'; // Adjust the path as necessary
+import App from '../../src/App';
 
 describe('App Component', () => {
   it('renders the App and takes a Percy snapshot', () => {
