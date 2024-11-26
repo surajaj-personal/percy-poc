@@ -23,8 +23,8 @@ const App: React.FC = () => {
         </p>
         <button
           style={{
-            backgroundColor: "yellow",
-            color: "orange",
+            backgroundColor: "orange",
+            color: "white",
             padding: "15px 25px",
             border: "none",
             borderRadius: "5px",
